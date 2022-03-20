@@ -1,28 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/standard_margin"
-    app:cardElevation="4dp">
+    android:layout_margin="8dp"
+    app:cardElevation="20dp">
 
-    <LinearLayout
+    <ImageView
+        android:layout_margin="@dimen/standard_margin_small"
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
-        android:orientation="vertical">
+        android:layout_height="@dimen/img_height"
+        android:scaleType="centerCrop"
+        tools:src="@tools:sample/backgrounds/scenic" />
 
-        <include layout="@layout/layout_item_content" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="210dp"
-            android:layout_marginTop="@dimen/standard_margin"
-            android:scaleType="centerCrop"
-            tools:src="@tools:sample/backgrounds/scenic" />
-
-    </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

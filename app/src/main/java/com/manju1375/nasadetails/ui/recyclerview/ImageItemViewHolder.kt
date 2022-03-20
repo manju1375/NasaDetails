@@ -6,7 +6,5 @@ import kotlinx.android.synthetic.main.item_image.view.*
 import kotlinx.android.synthetic.main.layout_item_content.view.*
 
 class ImageItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val profileName = itemView.title
-    val postDescription = itemView.postDescription
     val imageView = itemView.imageView
 }
