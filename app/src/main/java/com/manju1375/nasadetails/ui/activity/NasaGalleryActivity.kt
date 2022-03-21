@@ -3,7 +3,6 @@ package com.manju1375.nasadetails.ui.activity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -40,7 +39,7 @@ class NasaGalleryActivity : AppCompatActivity() {
         networkStatusHelper.observe(this, {
             when (it) {
                 NetworkStatus.Available -> {
-                    if (nasaDetailsViewModel.isNetworkLast.value == true) {
+                    if (nasaDetailsViewModel.isNetworkLost.value == true) {
                         display(resources.getString(R.string.network_available))
                         nasaDetailsViewModel.changeNetworkStatus(false)
                     }

@@ -8,5 +8,5 @@
     <color name="profile_name_color">#1D1D1D</color>
     <color name="content_color">#353535</color>
     <color name="activity_background_color">#FFFFFF</color>
-
+    <color name="lighter_gray">#DDDDDD</color>
 </resources>

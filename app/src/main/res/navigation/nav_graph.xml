@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.manju1375.nasadetails.ui.fragment.NasaGalleryFragment"
-        android:label="@string/first_fragment_label"
+        android:label="@string/galaxy_label"
         tools:layout="@layout/layout_gallery">
 
         <action
@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.manju1375.nasadetails.ui.fragment.NasaDetailsFragment"
-        android:label="@string/second_fragment_label"
+        android:label="@string/know_more_label"
         tools:layout="@layout/layout_details">
 
         <action

@@ -1,7 +1,6 @@
 package com.manju1375.nasadetails.ui.viewmodel
 
 import android.content.Context
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.manju1375.nasadetails.model.NasaItemResponse
@@ -23,7 +22,8 @@ import javax.inject.Inject
 class NasaDetailsViewModel @Inject constructor(@ApplicationContext var appContext: Context) : ViewModel() {
     val nasaDetails = MutableLiveData<List<NasaItemResponse>>()
     val progressBar = MutableLiveData<Boolean>()
-    var isNetworkLast = MutableLiveData<Boolean>()
+    var isNetworkLost = MutableLiveData<Boolean>()
+    var selectedItem = MutableLiveData<Int>()
 
     fun readDetails() {
         progressBar.value = true
@@ -35,7 +35,7 @@ class NasaDetailsViewModel @Inject constructor(@ApplicationContext var appContex
     }
 
     fun changeNetworkStatus(networkStatus: Boolean){
-        isNetworkLast.postValue(networkStatus)
+        isNetworkLost.postValue(networkStatus)
     }
 }
 

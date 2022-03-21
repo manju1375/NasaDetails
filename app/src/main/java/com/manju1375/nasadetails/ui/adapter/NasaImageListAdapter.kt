@@ -11,12 +11,14 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.manju1375.nasadetails.R
 import com.manju1375.nasadetails.model.NasaItemResponse
+import dagger.Provides
 import javax.inject.Inject
 
 
 class NasaImageListAdapter @Inject constructor() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var dataList = mutableListOf<NasaItemResponse>()
+    private lateinit var itemClickListener:onNasaItemClickListener
 
     private val requestOptions: RequestOptions = RequestOptions()
         .centerCrop()
@@ -24,6 +26,10 @@ class NasaImageListAdapter @Inject constructor() : RecyclerView.Adapter<Recycler
         .error(R.drawable.ic_launcher_foreground)
         .diskCacheStrategy(DiskCacheStrategy.ALL)
         .priority(Priority.HIGH)
+
+    fun setOnItemClickListener(itemClickListener: onNasaItemClickListener){
+        this.itemClickListener = itemClickListener
+    }
 
     fun setDetails(movies: List<NasaItemResponse>) {
         this.dataList = movies.toMutableList()
@@ -44,13 +50,17 @@ class NasaImageListAdapter @Inject constructor() : RecyclerView.Adapter<Recycler
         val viewHolder = holder as ImageItemViewHolder
         Glide.with(holder.itemView.context).load(postData.url).apply(requestOptions).into(viewHolder.imageView)
         viewHolder.itemView.setOnClickListener {
-            Toast.makeText(context, "Image type post", Toast.LENGTH_SHORT).show()
+            itemClickListener.onClick(position)
         }
     }
 
 
     override fun getItemCount(): Int {
         return dataList.size
+    }
+
+    interface onNasaItemClickListener{
+        fun onClick(position: Int)
     }
 
 }

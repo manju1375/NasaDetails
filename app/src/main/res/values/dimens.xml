@@ -3,5 +3,6 @@
     <dimen name="standard_margin">16dp</dimen>
     <dimen name="profile_name_text_size">16sp</dimen>
     <dimen name="img_height">210dp</dimen>
+    <dimen name="details_img_height">240dp</dimen>
     <dimen name="standard_margin_small">16dp</dimen>
 </resources>
