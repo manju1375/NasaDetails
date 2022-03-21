@@ -13,10 +13,9 @@ import javax.inject.Singleton
 @Module
 @InstallIn(ViewModelComponent::class)
 object NasaDetailsRepository {
-
     @Singleton
     @Provides
     fun getNasaDetails(context: Context): List<NasaItemResponse> {
-        return context.jsonToClass(R.raw.data)
+        return (context.jsonToClass(R.raw.data) as List<NasaItemResponse>).sortedByDescending { it.date }
     }
 }
