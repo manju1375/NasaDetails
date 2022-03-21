@@ -14,6 +14,8 @@ This App will fetch Nasa Galaxy Images from local JSON. It will initially displa
 ## Architecture
 <img alt="App High Level Architecture" height="700px" src="https://github.com/manju1375/NasaDetails/blob/master/App_Architecture.png" />
 
+### Demo
+<img height="400px" src="https://github.com/manju1375/NasaDetails/blob/master/Demo.gif" />
 
 ## Author
 [Manjunath D]( https://github.com/manju1375)
