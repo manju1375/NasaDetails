@@ -16,7 +16,7 @@ import javax.inject.Inject
 class NasaImageListAdapter @Inject constructor() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var dataList = mutableListOf<NasaItemResponse>()
-    private lateinit var itemClickListener:onNasaItemClickListener
+    private lateinit var itemClickListener:OnNasaItemClickListener
 
     private val requestOptions: RequestOptions = RequestOptions()
         .centerCrop()
@@ -25,7 +25,7 @@ class NasaImageListAdapter @Inject constructor() : RecyclerView.Adapter<Recycler
         .diskCacheStrategy(DiskCacheStrategy.ALL)
         .priority(Priority.HIGH)
 
-    fun setOnItemClickListener(itemClickListener: onNasaItemClickListener){
+    fun setOnItemClickListener(itemClickListener: OnNasaItemClickListener){
         this.itemClickListener = itemClickListener
     }
 
@@ -55,7 +55,7 @@ class NasaImageListAdapter @Inject constructor() : RecyclerView.Adapter<Recycler
         return dataList.size
     }
 
-    interface onNasaItemClickListener{
+    interface OnNasaItemClickListener{
         fun onClick(position: Int)
     }
 

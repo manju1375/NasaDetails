@@ -6,8 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.manju1375.nasadetails.R
 import com.manju1375.nasadetails.databinding.LayoutGalleryBinding
@@ -20,7 +18,7 @@ import javax.inject.Inject
  * [NasaGalleryFragment] Nasa pics gallery fragment
  */
 @AndroidEntryPoint
-class NasaGalleryFragment : Fragment(),NasaImageListAdapter.onNasaItemClickListener {
+class NasaGalleryFragment : Fragment(),NasaImageListAdapter.OnNasaItemClickListener {
 
     private var _binding: LayoutGalleryBinding? = null
     // This property is only valid between onCreateView and

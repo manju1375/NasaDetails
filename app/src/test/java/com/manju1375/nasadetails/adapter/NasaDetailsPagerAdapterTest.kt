@@ -2,7 +2,6 @@ package com.manju1375.nasadetails.adapter
 
 import com.manju1375.nasadetails.model.NasaItemResponse
 import com.manju1375.nasadetails.ui.adapter.NasaDetailsPagerAdapter
-import com.manju1375.nasadetails.ui.adapter.NasaImageListAdapter
 import junit.framework.TestCase
 import org.junit.Before
 import org.junit.Test

@@ -30,7 +30,6 @@ class NetworkStatusHelper@Inject constructor(@ApplicationContext var context: Co
     var connectivityManager: ConnectivityManager =
         context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     private lateinit var connectivityManagerCallback: ConnectivityManager.NetworkCallback
-    private var isNetworkLostBefore = false
 
     fun announceStatus(){
         if (validNetworkConnections.isNotEmpty()){
@@ -40,7 +39,7 @@ class NetworkStatusHelper@Inject constructor(@ApplicationContext var context: Co
         }
     }
 
-    fun getConnectivityManagerCallback() =
+    private fun getConnectivityManagerCallback() =
         object : ConnectivityManager.NetworkCallback(){
             override fun onAvailable(network: Network) {
                 super.onAvailable(network)
@@ -70,7 +69,7 @@ class NetworkStatusHelper@Inject constructor(@ApplicationContext var context: Co
 
     private fun determineInternetAccess(network: Network) {
         CoroutineScope(Dispatchers.IO).launch{
-            if (InernetAvailablity.check()){
+            if (InternetAvailability.check()){
                 withContext(Dispatchers.Main){
                     validNetworkConnections.add(network)
                     announceStatus()
@@ -97,7 +96,7 @@ class NetworkStatusHelper@Inject constructor(@ApplicationContext var context: Co
 
 }
 
-object InernetAvailablity {
+object InternetAvailability {
 
     fun check() : Boolean {
         return try {

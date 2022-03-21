@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.manju1375.nasadetails.ui.viewmodel.NasaDetailsViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import org.junit.Test
 import org.junit.runner.RunWith
 

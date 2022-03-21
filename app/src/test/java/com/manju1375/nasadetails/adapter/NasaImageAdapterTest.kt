@@ -1,8 +1,6 @@
 package com.manju1375.nasadetails.adapter
 
-import android.view.View
 import com.manju1375.nasadetails.model.NasaItemResponse
-import com.manju1375.nasadetails.ui.adapter.ImageItemViewHolder
 import com.manju1375.nasadetails.ui.adapter.NasaImageListAdapter
 import junit.framework.TestCase
 import org.junit.Before
