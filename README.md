@@ -25,16 +25,6 @@ This App will fetch Nasa Galaxy Images from local JSON. It will initially displa
 3.	[Google's Codelab](https://codelabs.developers.google.com/codelabs/android-training-livedata-viewmodel/#0)
 4.	[Hilt Sample reference]( https://howtodoandroid.com/android-hilt-dependency-injection/)
 5.	[Architecture Components Samples](https://github.com/android/architecture-components-samples/tree/88747993139224a4bb6dbe985adf652d557de621)
-6.	[View Pager Reference] (https://guides.codepath.com/android/viewpager-with-fragmentpageradapter)
+6.	[View Pager Reference](https://guides.codepath.com/android/viewpager-with-fragmentpageradapter)
 
-## Import Project
-
-Local machine codebase setup flow
- 1. Clone the MusicWiki Android using:
-    - **Command:**  git clone https://yourusername@stash.lbidts.com/scm/~yourusername/https://github.com/manju1375/NasaDetails.git
- 2. Import it in Android studio
-Your environment is now set up and ready for development.
-
-
-![image](https://user-images.githubusercontent.com/3723978/159310998-db11525e-138b-4d66-a1fe-5b4f9dcc3ad4.png)
 
