@@ -1,4 +1,4 @@
-package com.manju1375.nasadetails.ui.recyclerview
+package com.manju1375.nasadetails.ui.adapter
 
 
 import android.view.LayoutInflater

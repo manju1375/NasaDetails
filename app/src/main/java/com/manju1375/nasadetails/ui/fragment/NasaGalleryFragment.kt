@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.manju1375.nasadetails.databinding.LayoutGalleryBinding
-import com.manju1375.nasadetails.ui.recyclerview.NasaImageListAdapter
+import com.manju1375.nasadetails.ui.adapter.NasaImageListAdapter
 import com.manju1375.nasadetails.ui.viewmodel.NasaDetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
