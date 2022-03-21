@@ -61,7 +61,7 @@ class NasaDetailsPagerAdapter @Inject constructor(@ActivityContext context: Cont
         mLayoutInflater = LayoutInflater.from(context)
         requestOptions = RequestOptions()
             .centerCrop()
-            .placeholder(R.drawable.loading_spinner)
+            .placeholder(R.drawable.loading_drawable)
             .error(R.drawable.ic_launcher_foreground)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .priority(Priority.HIGH)

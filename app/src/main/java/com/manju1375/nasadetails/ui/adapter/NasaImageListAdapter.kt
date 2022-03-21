@@ -3,7 +3,6 @@ package com.manju1375.nasadetails.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
@@ -11,7 +10,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.manju1375.nasadetails.R
 import com.manju1375.nasadetails.model.NasaItemResponse
-import dagger.Provides
 import javax.inject.Inject
 
 
@@ -22,7 +20,7 @@ class NasaImageListAdapter @Inject constructor() : RecyclerView.Adapter<Recycler
 
     private val requestOptions: RequestOptions = RequestOptions()
         .centerCrop()
-        .placeholder(R.drawable.loading_spinner)
+        .placeholder(R.drawable.loading_drawable)
         .error(R.drawable.ic_launcher_foreground)
         .diskCacheStrategy(DiskCacheStrategy.ALL)
         .priority(Priority.HIGH)
