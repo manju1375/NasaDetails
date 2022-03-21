@@ -10,8 +10,6 @@ This App will fetch Nasa Galaxy Images from local JSON. It will initially displa
 6.	AndroidX
 7.	JetPack Libraries
 
-### Demo
-<img height="400px" src="https://github.com/WaheedNazir/TodoKotlinMVVMHilt/blob/main/screens/sample_demo.gif" />
 
 ## Architecture
 <img alt="App High Level Architecture" height="700px" src="https://github.com/manju1375/NasaDetails/blob/master/simple_architecture.pdf" />
