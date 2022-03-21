@@ -19,19 +19,16 @@ import javax.inject.Inject
 @HiltViewModel
 @Module
 @InstallIn(FragmentComponent::class,ActivityComponent::class)
-class NasaDetailsViewModel @Inject constructor(@ApplicationContext var appContext: Context) : ViewModel() {
+class NasaDetailsViewModel @Inject  constructor(@ApplicationContext var appContext: Context) : ViewModel() {
     val nasaDetails = MutableLiveData<List<NasaItemResponse>>()
-    val progressBar = MutableLiveData<Boolean>()
     var isNetworkLost = MutableLiveData<Boolean>()
     var selectedItem = MutableLiveData<Int>()
 
     fun readDetails() {
-        progressBar.value = true
         CoroutineScope(Dispatchers.IO).launch {
             val result = NasaDetailsRepository.getNasaDetails(appContext)
             nasaDetails.postValue(result)
         }
-        progressBar.value = false
     }
 
     fun changeNetworkStatus(networkStatus: Boolean){

@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.manju1375.nasadetails.R
@@ -25,7 +27,7 @@ class NasaGalleryFragment : Fragment(),NasaImageListAdapter.onNasaItemClickListe
     // onDestroyView.
     private val binding get() = _binding!!
 
-    lateinit var nasaDetailsViewModel:NasaDetailsViewModel
+    val nasaDetailsViewModel:NasaDetailsViewModel by activityViewModels()
     @Inject lateinit var adapter:NasaImageListAdapter
 
     override fun onCreateView(
@@ -35,16 +37,9 @@ class NasaGalleryFragment : Fragment(),NasaImageListAdapter.onNasaItemClickListe
 
         _binding = LayoutGalleryBinding.inflate(inflater, container, false)
         binding.recyclerview.adapter = adapter
-        nasaDetailsViewModel = ViewModelProvider(requireActivity()).get(NasaDetailsViewModel::class.java)
+        //nasaDetailsViewModel = ViewModelProvider(requireActivity()).get(NasaDetailsViewModel::class.java)
         nasaDetailsViewModel.nasaDetails.observe(viewLifecycleOwner,{ nasaDetails ->
             adapter.setDetails(nasaDetails)
-        })
-        nasaDetailsViewModel.progressBar.observe(viewLifecycleOwner, {
-            if (it) {
-                binding.progressDialog.visibility = View.VISIBLE
-            } else {
-                binding.progressDialog.visibility = View.GONE
-            }
         })
         adapter.setOnItemClickListener(this)
         return binding.root

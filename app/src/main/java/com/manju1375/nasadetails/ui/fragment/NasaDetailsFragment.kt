@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.manju1375.nasadetails.databinding.LayoutDetailsBinding
@@ -25,7 +26,7 @@ class NasaDetailsFragment : Fragment() {
 
     private var _binding: LayoutDetailsBinding? = null
 
-    lateinit var nasaDetailsViewModel: NasaDetailsViewModel
+    val nasaDetailsViewModel:NasaDetailsViewModel by activityViewModels()
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -36,7 +37,7 @@ class NasaDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = LayoutDetailsBinding.inflate(inflater, container, false)
-        nasaDetailsViewModel = ViewModelProvider(requireActivity()).get(NasaDetailsViewModel::class.java)
+        //nasaDetailsViewModel = ViewModelProvider(requireActivity()).get(NasaDetailsViewModel::class.java)
         nasaDetailsViewModel.nasaDetails.value?.let { nasaDetailsPagerAdapter.setNasaDetails(it) }
         val viewPager = binding.viewpager
         viewPager.adapter = nasaDetailsPagerAdapter

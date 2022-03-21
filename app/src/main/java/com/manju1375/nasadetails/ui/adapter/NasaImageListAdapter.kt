@@ -17,7 +17,7 @@ import javax.inject.Inject
 
 class NasaImageListAdapter @Inject constructor() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private var dataList = mutableListOf<NasaItemResponse>()
+    var dataList = mutableListOf<NasaItemResponse>()
     private lateinit var itemClickListener:onNasaItemClickListener
 
     private val requestOptions: RequestOptions = RequestOptions()
@@ -31,8 +31,8 @@ class NasaImageListAdapter @Inject constructor() : RecyclerView.Adapter<Recycler
         this.itemClickListener = itemClickListener
     }
 
-    fun setDetails(movies: List<NasaItemResponse>) {
-        this.dataList = movies.toMutableList()
+    fun setDetails(list: List<NasaItemResponse>) {
+        this.dataList = list.toMutableList()
         notifyDataSetChanged()
     }
 
@@ -45,8 +45,6 @@ class NasaImageListAdapter @Inject constructor() : RecyclerView.Adapter<Recycler
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
         val postData = dataList[position]
-        val context = holder.itemView.context
-
         val viewHolder = holder as ImageItemViewHolder
         Glide.with(holder.itemView.context).load(postData.url).apply(requestOptions).into(viewHolder.imageView)
         viewHolder.itemView.setOnClickListener {

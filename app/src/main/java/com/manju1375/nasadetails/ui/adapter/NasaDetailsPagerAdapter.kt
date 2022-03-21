@@ -18,12 +18,14 @@ import javax.inject.Inject
 // Custom pager adapter not using fragments
 class NasaDetailsPagerAdapter @Inject constructor(@ActivityContext context: Context) : PagerAdapter() {
 
-    private lateinit var pages:List<NasaItemResponse>
+    var pages = mutableListOf<NasaItemResponse>()
     fun setNasaDetails(list: List<NasaItemResponse>){
-        pages = list
+        pages = list.toMutableList()
+        notifyDataSetChanged()
     }
     var mLayoutInflater: LayoutInflater
     val requestOptions: RequestOptions
+
 
     override fun getCount() = pages.size
 
