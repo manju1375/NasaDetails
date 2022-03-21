@@ -28,3 +28,10 @@ This App will fetch Nasa Galaxy Images from local JSON. It will initially displa
 6.	[View Pager Reference](https://guides.codepath.com/android/viewpager-with-fragmentpageradapter)
 
 
+#### **Local machine codebase setup flow**
+
+     1. Clone the MusicWiki Android using:
+        - **Command:**  git clone https://yourusername@stash.lbidts.com/scm/~yourusername/https://github.com/manju1375/MusicGen.git
+     2. Import it in Android studio
+
+Your environment is now set up and ready for development.
