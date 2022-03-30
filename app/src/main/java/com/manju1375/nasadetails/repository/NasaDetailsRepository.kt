@@ -12,10 +12,10 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(ViewModelComponent::class)
-object NasaDetailsRepository {
+object NasaDetailsRepository:NasaDetailsRepositoryContract {
     @Singleton
     @Provides
-    fun getNasaDetails(context: Context): List<NasaItemResponse> {
+    override fun getNasaDetails(context: Context): List<NasaItemResponse> {
         return (context.jsonToClass(R.raw.data) as List<NasaItemResponse>).sortedByDescending { it.date }
     }
 }
