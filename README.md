@@ -9,6 +9,8 @@ This App will fetch Nasa Galaxy Images from local JSON. It will initially displa
 5.	Glide
 6.	AndroidX
 7.	JetPack Libraries
+8.	Mockito
+9.	PowerMockito
 
 
 ## Architecture
